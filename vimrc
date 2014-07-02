@@ -216,3 +216,6 @@ nmap <F8> :TagbarToggle<CR>
 " NerdTree
 map <C-n> :NERDTreeToggle<CR>
 "let NERDTreeMapOpenInTab='<ENTER>'
+
+" Forgotten sudo
+cmap w!! w !sudo tee > /dev/null %
