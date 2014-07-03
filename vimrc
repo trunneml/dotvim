@@ -210,12 +210,15 @@ inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
 " wget -O ~/.vim/ftplugin/python_editing.vim http://www.vim.org/scripts/download_script.php?src_id=5492
 set nofoldenable
 
+
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
+
 
 " NerdTree
 map <C-n> :NERDTreeToggle<CR>
 "let NERDTreeMapOpenInTab='<ENTER>'
+
 
 " Forgotten sudo
 cmap w!! w !sudo tee > /dev/null %
