@@ -184,7 +184,8 @@ set wildignore+=*/coverage/*
 " git clone git://github.com/davidhalter/jedi-vim.git
 let g:jedi#usages_command = "<leader>z"
 let g:jedi#popup_on_dot = 0
-let g:jedi#popup_select_first = 0
+let g:jedi#popup_select_first = 1
+let g:jedi#usages_command = "<leader>u"
 map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
 
 " Better navigating through omnicomplete option list
