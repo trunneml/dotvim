@@ -187,6 +187,7 @@ let g:jedi#popup_on_dot = 0
 let g:jedi#popup_select_first = 1
 let g:jedi#usages_command = "<leader>u"
 map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
+"set splitbelow
 
 " Better navigating through omnicomplete option list
 " See http://stackoverflow.com/questions/2170023/how-to-map-keys-for-popup-menu-in-vim
@@ -220,10 +221,22 @@ nmap <F8> :TagbarToggle<CR>
 " NerdTree
 "
 map <C-n> :NERDTreeToggle<CR>
-"let NERDTreeMapOpenInTab='<ENTER>'
+let NERDTreeMapOpenInTab='<ENTER>'
 
 "
 " Forgotten sudo
 "
 cmap w!! w !sudo tee > /dev/null %
+
+"
+" Syntastic
+"
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
