@@ -138,6 +138,12 @@ set nowritebackup
 set noswapfile
 
 
+"
+" Forgotten sudo
+"
+cmap w!! w !sudo tee > /dev/null %
+
+
 " Setup Pathogen to manage your plugins
 " mkdir -p ~/.vim/autoload ~/.vim/bundle
 " curl -so ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/HEAD/autoload/pathogen.vim
@@ -227,11 +233,6 @@ nmap <F8> :TagbarToggle<CR>
 "
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeMapOpenInTab='<ENTER>'
-
-"
-" Forgotten sudo
-"
-cmap w!! w !sudo tee > /dev/null %
 
 "
 " Syntastic
