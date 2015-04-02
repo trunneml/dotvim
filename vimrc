@@ -208,7 +208,9 @@ set wildignore+=*/coverage/*
 " Python folding
 " mkdir -p ~/.vim/ftplugin
 " wget -O ~/.vim/ftplugin/python_editing.vim http://www.vim.org/scripts/download_script.php?src_id=5492
-"set nofoldenable
+set nofoldenable
+nnoremap <space> za
+vnoremap <space> zf
 
 
 "
