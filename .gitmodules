@@ -22,3 +22,6 @@
 [submodule "bundle/vim-css-color"]
 	path = bundle/vim-css-color
 	url = ttps://github.com/ap/vim-css-color.git
+[submodule "bundle/wombat256.vim"]
+	path = bundle/wombat256.vim
+	url = https://github.com/vim-scripts/wombat256.vim.git

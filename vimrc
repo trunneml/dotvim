@@ -92,19 +92,6 @@ vnoremap < <gv  " better indentation
 vnoremap > >gv  " better indentation
 
 
-"
-" Color scheme
-"
-" mkdir -p ~/.vim/colors && cd ~/.vim/colors
-" wget -O wombat256mod.vim http://www.vim.org/scripts/download_script.php?src_id=13400
-" Show whitespace
-" MUST be inserted BEFORE the colorscheme command
-autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
-au InsertLeave * match ExtraWhitespace /\s\+$/
-set t_Co=256
-color wombat256mod
-
-
 " Enable syntax highlighting
 " You need to reload this file for the change to apply
 filetype off
@@ -165,6 +152,21 @@ cmap w!! w !sudo tee > /dev/null %
 " Now you can install any plugin into a .vim/bundle/plugin-name/ folder
 call pathogen#infect()
 call pathogen#helptags()
+
+
+"
+" Color scheme
+"
+" cd ~/.vim/bundle
+" git clone https://github.com/vim-scripts/wombat256.vim.git
+"
+" Show whitespace
+" MUST be inserted BEFORE the colorscheme command
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+au InsertLeave * match ExtraWhitespace /\s\+$/
+set t_Co=256
+color wombat256mod
+
 
 " ============================================================================
 " Python IDE Setup
