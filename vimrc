@@ -283,3 +283,5 @@ function! ToggleErrors()
 endfunction
 nnoremap <silent> <C-e> :<C-u>call ToggleErrors()<CR>
 
+let python_highlight_all = 1
+
