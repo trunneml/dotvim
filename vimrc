@@ -193,6 +193,7 @@ set wildignore+=*/coverage/*
 " wget -O ~/.vim/ftplugin/python_editing.vim http://www.vim.org/scripts/download_script.php?src_id=5492
 "set nofoldenable
 
+
 "
 " Settings for jedi-vim
 "
@@ -228,11 +229,13 @@ inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
 "
 nmap <F8> :TagbarToggle<CR>
 
+
 "
 " NerdTree
 "
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeMapOpenInTab='<ENTER>'
+
 
 "
 " Syntastic
