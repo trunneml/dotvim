@@ -275,3 +275,7 @@ nnoremap <silent> <C-e> :<C-u>call ToggleErrors()<CR>
 
 let python_highlight_all = 1
 
+"
+" Gundo
+"
+nnoremap <F5> :GundoToggle<CR>
