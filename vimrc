@@ -169,13 +169,13 @@ color wombat256mod
 
 
 " ============================================================================
-" Python IDE Setup
+" IDE Setup
 " ============================================================================
 
 
-" Settings for vim-powerline
-" cd ~/.vim/bundle
-" git clone git://github.com/Lokaltog/vim-powerline.git
+" Settings for powerline
+" git submodule add https://github.com/powerline/powerline.git bundle/powerline
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 set laststatus=2
 
 
@@ -187,26 +187,6 @@ set wildignore+=*.pyc
 set wildignore+=*_build/*
 set wildignore+=*/coverage/*
 
-" Python folding
-" mkdir -p ~/.vim/ftplugin
-" wget -O ~/.vim/ftplugin/python_editing.vim http://www.vim.org/scripts/download_script.php?src_id=5492
-set nofoldenable
-autocmd FileType python set foldmethod=indent
-nnoremap <space> za
-vnoremap <space> zf
-
-
-"
-" Settings for jedi-vim
-"
-" cd ~/.vim/bundle
-" git clone git://github.com/davidhalter/jedi-vim.git
-let g:jedi#usages_command = "<leader>z"
-let g:jedi#popup_on_dot = 0
-let g:jedi#popup_select_first = 1
-let g:jedi#usages_command = "<leader>u"
-map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
-"set splitbelow
 
 " Better navigating through omnicomplete option list
 " See http://stackoverflow.com/questions/2170023/how-to-map-keys-for-popup-menu-in-vim
@@ -237,6 +217,33 @@ nmap <F8> :TagbarToggle<CR>
 "
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeMapOpenInTab='<ENTER>'
+
+
+" ============================================================================
+" Python Setup
+" ============================================================================
+
+
+" Python folding
+" mkdir -p ~/.vim/ftplugin
+" wget -O ~/.vim/ftplugin/python_editing.vim http://www.vim.org/scripts/download_script.php?src_id=5492
+set nofoldenable
+autocmd FileType python set foldmethod=indent
+nnoremap <space> za
+vnoremap <space> zf
+
+
+"
+" Settings for jedi-vim
+"
+" cd ~/.vim/bundle
+" git clone git://github.com/davidhalter/jedi-vim.git
+let g:jedi#usages_command = "<leader>z"
+let g:jedi#popup_on_dot = 0
+let g:jedi#popup_select_first = 1
+let g:jedi#usages_command = "<leader>u"
+map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
+"set splitbelow
 
 
 "
