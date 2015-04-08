@@ -28,3 +28,6 @@
 [submodule "bundle/python-syntax"]
 	path = bundle/python-syntax
 	url = https://github.com/hdima/python-syntax.git
+[submodule "bundle/SimpylFold"]
+	path = bundle/SimpylFold
+	url = https://github.com/tmhedberg/SimpylFold.git
