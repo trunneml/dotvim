@@ -22,9 +22,6 @@
 [submodule "bundle/wombat256.vim"]
 	path = bundle/wombat256.vim
 	url = https://github.com/vim-scripts/wombat256.vim.git
-[submodule "bundle/SimpylFold"]
-	path = bundle/SimpylFold
-	url = https://github.com/tmhedberg/SimpylFold.git
 [submodule "bundle/tagbar"]
 	path = bundle/tagbar
 	url = https://github.com/majutsushi/tagbar.git
