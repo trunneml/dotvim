@@ -34,3 +34,6 @@
 [submodule "bundle/gundo"]
 	path = bundle/gundo
 	url = http://github.com/sjl/gundo.vim.git
+[submodule "bundle/numbers.vim"]
+	path = bundle/numbers.vim
+	url = https://github.com/myusuf3/numbers.vim.git
