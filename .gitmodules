@@ -37,3 +37,9 @@
 [submodule "bundle/numbers.vim"]
 	path = bundle/numbers.vim
 	url = https://github.com/myusuf3/numbers.vim.git
+[submodule "bundle/vim-autoclose"]
+	path = bundle/vim-autoclose
+	url = https://github.com/spf13/vim-autoclose.git
+[submodule "bundle/vim-surround"]
+	path = bundle/vim-surround
+	url = https://github.com/tpope/vim-surround.git
