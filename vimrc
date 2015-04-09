@@ -48,21 +48,6 @@ set bs=2     " make backspace behave like normal again
 " it is next to ``m`` and ``n`` which I use for navigating between tabs.
 let mapleader = ","
 
-
-" Bind nohl
-" Removes highlight of your last search
-" ``<C>`` stands for ``CTRL`` and therefore ``<C-n>`` stands for ``CTRL+n``
-noremap <C-n> :nohl<CR>
-vnoremap <C-n> :nohl<CR>
-inoremap <C-n> :nohl<CR>
-
-
-" Quicksave command
-"" noremap <C-Z> :update<CR>
-"" vnoremap <C-Z> <C-C>:update<CR>
-"" inoremap <C-Z> <C-O>:update<CR>
-
-
 " Quick quit command
 noremap <Leader>e :quit<CR>  " Quit current window
 noremap <Leader>E :qa!<CR>   " Quit all windows
@@ -219,6 +204,12 @@ map <C-n> :NERDTreeToggle<CR>
 let NERDTreeMapOpenInTab='<ENTER>'
 
 
+"
+" Gundo
+"
+nnoremap <F5> :GundoToggle<CR>
+
+
 " ============================================================================
 " Python Setup
 " ============================================================================
@@ -274,8 +265,3 @@ endfunction
 nnoremap <silent> <C-e> :<C-u>call ToggleErrors()<CR>
 
 let python_highlight_all = 1
-
-"
-" Gundo
-"
-nnoremap <F5> :GundoToggle<CR>
