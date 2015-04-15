@@ -181,11 +181,19 @@ VAMActivate css_color@skammer
 "
 VAMActivate localrc
 
-
+"
 " Settings for powerline
-VAMActivate powerline
-set laststatus=2
+"
+"VAMActivate powerline
 
+"
+" vim-airline
+"
+VAMActivate vim-airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+
+set laststatus=2
 
 " Settings for ctrlp
 VAMActivate ctrlp
@@ -238,8 +246,12 @@ nnoremap <F5> :GundoToggle<CR>
 " Autoclose
 "
 VAMActivate AutoClose%2009
-VAMActivate surround 
+VAMActivate surround
 
+"
+" Git support
+"
+VAMActivate fugitive
 
 " ============================================================================
 " Python Setup
@@ -294,3 +306,9 @@ endfunction
 nnoremap <silent> <C-e> :<C-u>call ToggleErrors()<CR>
 
 let python_highlight_all = 1
+
+
+VAMActivate github:tell-k/vim-autopep8
+autocmd FileType python map <buffer> <F3> :call Autopep8()<CR>
+let g:autopep8_disable_show_diff=1
+
