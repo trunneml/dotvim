@@ -114,7 +114,7 @@ VAMActivate numbers
 set tw=79   " width of document (used by gd)
 set nowrap  " don't automatically wrap on load
 set fo-=t   " don't automatically wrap text when typing
-set colorcolumn=80
+"set colorcolumn=80
 highlight ColorColumn ctermbg=233
 
 
@@ -182,6 +182,12 @@ VAMActivate css_color@skammer
 VAMActivate localrc
 
 "
+" Buffergator
+"
+VAMActivate Buffergator
+nnoremap <silent> <F7> :BuffergatorToggle<CR>
+
+"
 " Settings for powerline
 "
 "VAMActivate powerline
@@ -195,7 +201,9 @@ let g:airline_powerline_fonts = 1
 
 set laststatus=2
 
-" Settings for ctrlp
+"
+" ctrlp
+"
 VAMActivate ctrlp
 let g:ctrlp_max_height = 30
 set wildignore+=*.pyc
@@ -232,7 +240,7 @@ nmap <F8> :TagbarToggle<CR>
 " NerdTree
 "
 VAMActivate The_NERD_tree
-map <C-n> :NERDTreeToggle<CR>
+map <F6> :NERDTreeToggle<CR>
 "let NERDTreeMapOpenInTab='<ENTER>'
 
 
@@ -252,30 +260,7 @@ VAMActivate surround
 " Git support
 "
 VAMActivate fugitive
-
-" ============================================================================
-" Python Setup
-" ============================================================================
-VAMActivate github:hdima/python-syntax
-
-" Python folding
-set nofoldenable
-autocmd FileType python set foldmethod=indent
-nnoremap <space> za
-vnoremap <space> zf
-
-
-"
-" Settings for jedi-vim
-"
-VAMActivate jedi-vim
-let g:jedi#usages_command = "<leader>z"
-let g:jedi#popup_on_dot = 0
-let g:jedi#popup_select_first = 1
-let g:jedi#usages_command = "<leader>u"
-map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
-"set splitbelow
-
+VAMActivate vim-gitgutter
 
 "
 " Syntastic
@@ -305,10 +290,38 @@ function! ToggleErrors()
 endfunction
 nnoremap <silent> <C-e> :<C-u>call ToggleErrors()<CR>
 
+
+" ============================================================================
+" Python Setup
+" ============================================================================
+VAMActivate github:hdima/python-syntax
+
+"
+" Python folding
+"
+set nofoldenable
+autocmd FileType python set foldmethod=indent
+nnoremap <space> za
+vnoremap <space> zf
+
+"
+" Settings for jedi-vim
+"
+VAMActivate jedi-vim
+let g:jedi#usages_command = "<leader>z"
+let g:jedi#popup_on_dot = 0
+let g:jedi#popup_select_first = 1
+let g:jedi#usages_command = "<leader>u"
+map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
+"set splitbelow
+
 let python_highlight_all = 1
 
-
+"
+" Autp PEP8
+"
 VAMActivate github:tell-k/vim-autopep8
 autocmd FileType python map <buffer> <F3> :call Autopep8()<CR>
 let g:autopep8_disable_show_diff=1
+
 
