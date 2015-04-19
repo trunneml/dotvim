@@ -70,7 +70,7 @@ set bs=2     " make backspace behave like normal again
 
 " Rebind <Leader> key
 " I like to have it here becuase it is easier to reach than the default and
-" it is next to ``m`` and ``n`` which I use for navigating between tabs.
+" it is next to ``m`` and ``n`` which I use for navigating between buffers.
 let mapleader = ","
 
 " Quick quit command
@@ -86,9 +86,9 @@ map <c-l> <c-w>l
 map <c-h> <c-w>h
 
 
-" easier moving between tabs
-map <Leader>n <esc>:tabprevious<CR>
-map <Leader>m <esc>:tabnext<CR>
+" easier moving between buffers
+map <Leader>n <esc>:bprevious<CR>
+map <Leader>m <esc>:bnext<CR>
 
 
 " map sort function to a key
@@ -196,10 +196,16 @@ nnoremap <silent> <F7> :BuffergatorToggle<CR>
 " vim-airline
 "
 VAMActivate vim-airline
-let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 0
 let g:airline_powerline_fonts = 1
 
 set laststatus=2
+
+"
+" vim-bufferline
+"
+VAMActivate vim-bufferline
+let g:bufferline_echo = 0
 
 "
 " ctrlp
