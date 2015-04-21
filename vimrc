@@ -24,9 +24,34 @@
 " This .vimrc is based on the sample .vimrc file by Martin Brochhaus
 " presented at PyCon APAC 2012
 
+" put this line first in ~/.vimrc
+set nocompatible | filetype indent plugin on | syn on
+
+fun! SetupVAM()
+  let c = get(g:, 'vim_addon_manager', {})
+  let g:vim_addon_manager = c
+  let c.plugin_root_dir = expand('$HOME', 1) . '/.vim/vim-addons'
+
+  " Force your ~/.vim/after directory to be last in &rtp always:
+  " let g:vim_addon_manager.rtp_list_hook = 'vam#ForceUsersAfterDirectoriesToBeLast'
+
+  " most used options you may want to use:
+  " let c.log_to_buf = 1
+  " let c.auto_install = 0
+  let &rtp.=(empty(&rtp)?'':',').c.plugin_root_dir.'/vim-addon-manager'
+  if !isdirectory(c.plugin_root_dir.'/vim-addon-manager/autoload')
+    execute '!git clone --depth=1 git://github.com/MarcWeber/vim-addon-manager '
+        \       shellescape(c.plugin_root_dir.'/vim-addon-manager', 1)
+  endif
+
+  " This provides the VAMActivate command, you could be passing plugin names, too
+  call vam#ActivateAddons([], {})
+endfun
+call SetupVAM()
+
 
 " Automatic reloading of .vimrc
-autocmd! bufwritepost .vimrc source %
+"autocmd! bufwritepost .vimrc source %
 
 
 " Better copy & paste
@@ -85,10 +110,11 @@ syntax on
 
 
 " Showing line numbers and length
+VAMActivate numbers
 set tw=79   " width of document (used by gd)
 set nowrap  " don't automatically wrap on load
 set fo-=t   " don't automatically wrap text when typing
-set colorcolumn=80
+"set colorcolumn=80
 highlight ColorColumn ctermbg=233
 
 
@@ -130,20 +156,10 @@ set noswapfile
 cmap w!! w !sudo tee > /dev/null %
 
 
-" Setup Pathogen to manage your plugins
-" mkdir -p ~/.vim/autoload ~/.vim/bundle
-" curl -so ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/HEAD/autoload/pathogen.vim
-" Now you can install any plugin into a .vim/bundle/plugin-name/ folder
-call pathogen#infect()
-call pathogen#helptags()
-
-
 "
 " Color scheme
 "
-" cd ~/.vim/bundle
-" git clone https://github.com/vim-scripts/wombat256.vim.git
-"
+VAMActivate wombat256 hybrid Solarized
 " Show whitespace
 " MUST be inserted BEFORE the colorscheme command
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
@@ -151,94 +167,86 @@ au InsertLeave * match ExtraWhitespace /\s\+$/
 set t_Co=256
 color wombat256mod
 
+"
+" CSS Colors
+"
+VAMActivate css_color@skammer
 
 " ============================================================================
 " IDE Setup
 " ============================================================================
 
+"
+" VIM localrc
+"
+VAMActivate localrc
 
+"
+" Buffergator
+"
+VAMActivate Buffergator
+nnoremap <silent> <F7> :BuffergatorToggle<CR>
+
+"
 " Settings for powerline
-" git submodule add https://github.com/powerline/powerline.git bundle/powerline
-set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+"
+"VAMActivate powerline
+
+"
+" vim-airline
+"
+VAMActivate vim-airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+
 set laststatus=2
 
-
-" Settings for ctrlp
-" cd ~/.vim/bundle
-" git clone https://github.com/kien/ctrlp.vim.git
+"
+" ctrlp
+"
+VAMActivate ctrlp
 let g:ctrlp_max_height = 30
 set wildignore+=*.pyc
 set wildignore+=*_build/*
 set wildignore+=*/coverage/*
 
-
-" Better navigating through omnicomplete option list
-" See http://stackoverflow.com/questions/2170023/how-to-map-keys-for-popup-menu-in-vim
-set completeopt=longest,menuone
-function! OmniPopup(action)
-    if pumvisible()
-        if a:action == 'j'
-            return "\<C-N>"
-        elseif a:action == 'k'
-            return "\<C-P>"
-        endif
-    endif
-    return a:action
-endfunction
-
-inoremap <silent><C-j> <C-R>=OmniPopup('j')<CR>
-inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
-
-
 "
 " Tagbar
 "
+VAMActivate Tagbar
 nmap <F8> :TagbarToggle<CR>
 
 
 "
 " NerdTree
 "
-map <C-n> :NERDTreeToggle<CR>
-let NERDTreeMapOpenInTab='<ENTER>'
+VAMActivate The_NERD_tree
+map <F6> :NERDTreeToggle<CR>
+"let NERDTreeMapOpenInTab='<ENTER>'
 
 
 "
 " Gundo
 "
+VAMActivate github:sjl/gundo.vim
 nnoremap <F5> :GundoToggle<CR>
 
-
-" ============================================================================
-" Python Setup
-" ============================================================================
-
-
-" Python folding
-" mkdir -p ~/.vim/ftplugin
-" wget -O ~/.vim/ftplugin/python_editing.vim http://www.vim.org/scripts/download_script.php?src_id=5492
-set nofoldenable
-autocmd FileType python set foldmethod=indent
-nnoremap <space> za
-vnoremap <space> zf
-
+"
+" Autoclose
+"
+VAMActivate AutoClose%2009
+VAMActivate surround
 
 "
-" Settings for jedi-vim
+" Git support
 "
-" cd ~/.vim/bundle
-" git clone git://github.com/davidhalter/jedi-vim.git
-let g:jedi#usages_command = "<leader>z"
-let g:jedi#popup_on_dot = 0
-let g:jedi#popup_select_first = 1
-let g:jedi#usages_command = "<leader>u"
-map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
-"set splitbelow
-
+VAMActivate fugitive
+VAMActivate vim-gitgutter
 
 "
 " Syntastic
 "
+VAMActivate Syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -263,4 +271,49 @@ function! ToggleErrors()
 endfunction
 nnoremap <silent> <C-e> :<C-u>call ToggleErrors()<CR>
 
+
+"
+" Snippets
+"
+VAMActivate vim-snippets UltiSnips
+
+let g:UltiSnipsExpandTrigger="<tab>"
+" <c-tab> doesn't work for me :-(
+let g:UltiSnipsListSnippets="<F12>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+" ============================================================================
+" Python Setup
+" ============================================================================
+VAMActivate github:hdima/python-syntax
+
+"
+" Python folding
+"
+set nofoldenable
+autocmd FileType python set foldmethod=indent
+nnoremap <space> za
+vnoremap <space> zf
+
+"
+" Settings for jedi-vim
+"
+VAMActivate jedi-vim
+let g:jedi#usages_command = "<leader>z"
+let g:jedi#popup_on_dot = 0
+let g:jedi#popup_select_first = 1
+let g:jedi#usages_command = "<leader>u"
+map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
+"set splitbelow
+
 let python_highlight_all = 1
+
+"
+" Autp PEP8
+"
+VAMActivate github:tell-k/vim-autopep8
+autocmd FileType python map <buffer> <F3> :call Autopep8()<CR>
+let g:autopep8_disable_show_diff=1
+
+
