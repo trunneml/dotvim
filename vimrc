@@ -60,8 +60,10 @@ call SetupVAM()
 
 
 set pastetoggle=<F2>
-"" set clipboard=unnamed
+set clipboard=unnamedplus
 
+" Improve performance
+set lazyredraw
 
 " Mouse and backspace
 set mouse=a  " on OSX press ALT and click
@@ -69,6 +71,7 @@ set bs=2     " make backspace behave like normal again
 
 " Commandline completion
 set wildmenu
+set wildignore=*.o,*~,*.pyc,*.pyo
 set wildmode=list:longest,full
 
 " Rebind <Leader> key
@@ -246,6 +249,8 @@ nnoremap <F5> :GundoToggle<CR>
 "
 VAMActivate AutoClose%2009
 VAMActivate surround
+set showmatch
+
 
 "
 " Git support
@@ -292,6 +297,7 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsListSnippets="<F12>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
 
 " ============================================================================
 " Python Setup
