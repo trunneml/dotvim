@@ -188,7 +188,7 @@ VAMActivate localrc
 " Buffergator
 "
 VAMActivate Buffergator
-nnoremap <silent> <F7> :BuffergatorToggle<CR>
+let g:buffergator_autoexpand_on_split = 0
 
 "
 " Settings for powerline
@@ -199,10 +199,17 @@ nnoremap <silent> <F7> :BuffergatorToggle<CR>
 " vim-airline
 "
 VAMActivate vim-airline
-let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 0
 let g:airline_powerline_fonts = 1
 
 set laststatus=2
+
+"
+" vim-bufferline
+"
+VAMActivate vim-bufferline
+let g:bufferline_echo = 0
+
 
 "
 " ctrlp
@@ -307,6 +314,7 @@ let g:jedi#usages_command = "<leader>z"
 let g:jedi#popup_on_dot = 0
 let g:jedi#popup_select_first = 1
 let g:jedi#usages_command = "<leader>u"
+let g:jedi#use_tabs_not_buffers = 0
 map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
 "set splitbelow
 
