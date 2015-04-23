@@ -37,3 +37,10 @@ set wildignore+=*.pyo
 set wildignore+=*_build/*
 set wildignore+=*/coverage/*
 
+"
+" VIM Python Test Runner
+"
+"set efm+=%-G%.%#lib/python%.%#/site-package%.%#
+set efm+=%A\ \ File\ \"%f\"\\,\ line\ %l\\,\ in\ %m
+VAMActivate github:JarrodCTaylor/vim-python-test-runner
+
