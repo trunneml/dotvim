@@ -29,7 +29,7 @@ let python_highlight_all = 1
 " Auto PEP8
 "
 VAMActivate github:tell-k/vim-autopep8
-let g:autopep8_disable_show_diff=1
+let g:autopep8_disable_show_diff = 1
 
 " ensure that python specific files are ignored
 set wildignore+=*.pyc
