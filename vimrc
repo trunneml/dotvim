@@ -227,7 +227,7 @@ set wildignore+=*/coverage/*
 " Tagbar
 "
 VAMActivate Tagbar
-nmap <F8> :TagbarToggle<CR>
+map <F3> :TagbarToggle<CR>
 
 
 "
@@ -330,7 +330,5 @@ let python_highlight_all = 1
 " Autp PEP8
 "
 VAMActivate github:tell-k/vim-autopep8
-autocmd FileType python map <buffer> <F3> :call Autopep8()<CR>
 let g:autopep8_disable_show_diff=1
-
 
