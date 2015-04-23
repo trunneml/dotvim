@@ -71,8 +71,14 @@ set bs=2     " make backspace behave like normal again
 
 " Commandline completion
 set wildmenu
-set wildignore=*.o,*~,*.pyc,*.pyo
 set wildmode=list:longest,full
+
+set wildignore+=*.o
+set wildignore+=*~
+set wildignore+=*.pyo
+set wildignore+=*.pyc
+set wildignore+=*_build/*
+set wildignore+=*/coverage/*
 
 " Rebind <Leader> key
 " I like to have it here becuase it is easier to reach than the default and
@@ -219,9 +225,6 @@ let g:bufferline_echo = 0
 "
 VAMActivate ctrlp
 let g:ctrlp_max_height = 30
-set wildignore+=*.pyc
-set wildignore+=*_build/*
-set wildignore+=*/coverage/*
 
 "
 " Tagbar
@@ -297,38 +300,4 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsListSnippets="<F12>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-
-
-" ============================================================================
-" Python Setup
-" ============================================================================
-VAMActivate github:hdima/python-syntax
-
-"
-" Python folding
-"
-set nofoldenable
-autocmd FileType python set foldmethod=indent
-nnoremap <space> za
-vnoremap <space> zf
-
-"
-" Settings for jedi-vim
-"
-VAMActivate jedi-vim
-let g:jedi#usages_command = "<leader>z"
-let g:jedi#popup_on_dot = 0
-let g:jedi#popup_select_first = 1
-let g:jedi#usages_command = "<leader>u"
-let g:jedi#use_tabs_not_buffers = 0
-map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
-"set splitbelow
-
-let python_highlight_all = 1
-
-"
-" Autp PEP8
-"
-VAMActivate github:tell-k/vim-autopep8
-let g:autopep8_disable_show_diff=1
 
