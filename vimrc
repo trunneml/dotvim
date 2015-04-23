@@ -53,12 +53,12 @@ call SetupVAM()
 " Automatic reloading of .vimrc
 "autocmd! bufwritepost .vimrc source %
 
+" Allow switching buffers without saving them
+set hidden
 
 " Better copy & paste
 " When you want to paste large blocks of code into vim, press F2 before you
 " paste. At the bottom you should see ``-- INSERT (paste) --``.
-
-
 set pastetoggle=<F2>
 set clipboard=unnamedplus
 
