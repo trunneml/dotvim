@@ -171,7 +171,7 @@ cmap w!! w !sudo tee > /dev/null %
 "
 " Color scheme
 "
-VAMActivate wombat256 hybrid Solarized
+VAMActivate wombat256 hybrid Solarized summerfruit256
 " Show whitespace
 " MUST be inserted BEFORE the colorscheme command
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
