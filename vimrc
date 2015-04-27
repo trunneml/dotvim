@@ -24,30 +24,9 @@
 " This .vimrc is based on the sample .vimrc file by Martin Brochhaus
 " presented at PyCon APAC 2012
 
-" put this line first in ~/.vimrc
-set nocompatible | filetype indent plugin on | syn on
-
-fun! SetupVAM()
-  let c = get(g:, 'vim_addon_manager', {})
-  let g:vim_addon_manager = c
-  let c.plugin_root_dir = expand('$HOME', 1) . '/.vim/vim-addons'
-
-  " Force your ~/.vim/after directory to be last in &rtp always:
-  " let g:vim_addon_manager.rtp_list_hook = 'vam#ForceUsersAfterDirectoriesToBeLast'
-
-  " most used options you may want to use:
-  " let c.log_to_buf = 1
-  " let c.auto_install = 0
-  let &rtp.=(empty(&rtp)?'':',').c.plugin_root_dir.'/vim-addon-manager'
-  if !isdirectory(c.plugin_root_dir.'/vim-addon-manager/autoload')
-    execute '!git clone --depth=1 git://github.com/MarcWeber/vim-addon-manager '
-        \       shellescape(c.plugin_root_dir.'/vim-addon-manager', 1)
-  endif
-
-  " This provides the VAMActivate command, you could be passing plugin names, too
-  call vam#ActivateAddons([], {})
-endfun
-call SetupVAM()
+set nocompatible  " be IMproved
+runtime bundle-enabled/vim-pathogen/autoload/pathogen.vim
+execute pathogen#infect('bundle-enabled/{}')
 
 
 " Automatic reloading of .vimrc
@@ -119,10 +98,10 @@ vnoremap > >gv  " better indentation
 filetype off
 filetype plugin indent on
 syntax on
-
+set showmatch
 
 " Showing line numbers and length
-VAMActivate numbers
+set number  " show line numbers
 set tw=79   " width of document (used by gd)
 set nowrap  " don't automatically wrap on load
 set fo-=t   " don't automatically wrap text when typing
@@ -171,7 +150,6 @@ cmap w!! w !sudo tee > /dev/null %
 "
 " Color scheme
 "
-VAMActivate wombat256 hybrid Solarized summerfruit256
 " Show whitespace
 " MUST be inserted BEFORE the colorscheme command
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
@@ -182,61 +160,42 @@ color wombat256mod
 "
 " CSS Colors
 "
-VAMActivate css_color@skammer
 
 " ============================================================================
 " IDE Setup
 " ============================================================================
 
 "
-" VIM localrc
-"
-VAMActivate localrc
-
-"
 " Buffergator
 "
-VAMActivate Buffergator
 let g:buffergator_autoexpand_on_split = 0
-
-"
-" Settings for powerline
-"
-"VAMActivate powerline
 
 "
 " vim-airline
 "
-VAMActivate vim-airline
 let g:airline#extensions#tabline#enabled = 0
 let g:airline_powerline_fonts = 1
-
 set laststatus=2
 
 "
 " vim-bufferline
 "
-VAMActivate vim-bufferline
 let g:bufferline_echo = 0
-
 
 "
 " ctrlp
 "
-VAMActivate ctrlp
 let g:ctrlp_max_height = 30
 
 "
 " Tagbar
 "
-VAMActivate Tagbar
 map <F3> :TagbarToggle<CR>
 
 
 "
 " NerdTree
 "
-VAMActivate The_NERD_tree
 map <F6> :NERDTreeToggle<CR>
 "let NERDTreeMapOpenInTab='<ENTER>'
 
@@ -244,27 +203,11 @@ map <F6> :NERDTreeToggle<CR>
 "
 " Gundo
 "
-VAMActivate github:sjl/gundo.vim
 nnoremap <F5> :GundoToggle<CR>
-
-"
-" Autoclose
-"
-VAMActivate AutoClose%2009
-VAMActivate surround
-set showmatch
-
-
-"
-" Git support
-"
-VAMActivate fugitive
-VAMActivate vim-gitgutter
 
 "
 " Syntastic
 "
-VAMActivate Syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -293,11 +236,53 @@ nnoremap <silent> <C-e> :<C-u>call ToggleErrors()<CR>
 "
 " Snippets
 "
-VAMActivate vim-snippets UltiSnips
 
 let g:UltiSnipsExpandTrigger="<tab>"
 " <c-tab> doesn't work for me :-(
 let g:UltiSnipsListSnippets="<F12>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+
+" ============================================================================
+" Python Setup
+" ============================================================================
+
+"
+" Python folding
+"
+set nofoldenable
+autocmd FileType python set foldmethod=indent
+nnoremap <space> za
+vnoremap <space> zf
+
+"
+" Settings for jedi-vim
+"
+let g:jedi#usages_command = "<leader>z"
+let g:jedi#popup_on_dot = 0
+let g:jedi#popup_select_first = 1
+let g:jedi#usages_command = "<leader>u"
+let g:jedi#use_tabs_not_buffers = 0
+map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
+"set splitbelow
+
+let python_highlight_all = 1
+
+"
+" Auto PEP8
+"
+let g:autopep8_disable_show_diff = 1
+
+" ensure that python specific files are ignored
+set wildignore+=*.pyc
+set wildignore+=*.pyo
+set wildignore+=*_build/*
+set wildignore+=*/coverage/*
+
+"
+" VIM Python Test Runner
+"
+"set efm+=%-G%.%#lib/python%.%#/site-package%.%#
+set efm+=%A\ \ File\ \"%f\"\\,\ line\ %l\\,\ in\ %m
 

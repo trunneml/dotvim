@@ -1,0 +1,72 @@
+[submodule "bundle-available/vim-pathogen"]
+	path = bundle-available/vim-pathogen
+	url = https://github.com/tpope/vim-pathogen.git
+[submodule "bundle-available/numbers.vim"]
+	path = bundle-available/numbers.vim
+	url = https://github.com/myusuf3/numbers.vim.git
+[submodule "bundle-available/vim-wombat256mod"]
+	path = bundle-available/vim-wombat256mod
+	url = https://github.com/michalbachowski/vim-wombat256mod.git
+[submodule "bundle-available/vim-lucius"]
+	path = bundle-available/vim-lucius
+	url = https://github.com/jonathanfilip/vim-lucius
+[submodule "bundle-available/vim-css-color"]
+	path = bundle-available/vim-css-color
+	url = https://github.com/skammer/vim-css-color.git
+[submodule "bundle-available/vim-localrc"]
+	path = bundle-available/vim-localrc
+	url = https://github.com/thinca/vim-localrc.git
+[submodule "bundle-available/vim-buffergator"]
+	path = bundle-available/vim-buffergator
+	url = https://github.com/jeetsukumaran/vim-buffergator.git
+[submodule "bundle-available/vim-airline"]
+	path = bundle-available/vim-airline
+	url = https://github.com/bling/vim-airline.git
+[submodule "bundle-available/vim-bufferline"]
+	path = bundle-available/vim-bufferline
+	url = https://github.com/bling/vim-bufferline.git
+[submodule "bundle-available/ctrlp.vim"]
+	path = bundle-available/ctrlp.vim
+	url = https://github.com/kien/ctrlp.vim.git
+[submodule "bundle-available/tagbar"]
+	path = bundle-available/tagbar
+	url = https://github.com/majutsushi/tagbar.git
+[submodule "bundle-available/nerdtree"]
+	path = bundle-available/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "bundle-available/gundo.vim"]
+	path = bundle-available/gundo.vim
+	url = https://github.com/sjl/gundo.vim.git
+[submodule "bundle-available/vim-autoclose"]
+	path = bundle-available/vim-autoclose
+	url = https://github.com/Townk/vim-autoclose.git
+[submodule "bundle-available/vim-surround"]
+	path = bundle-available/vim-surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule "bundle-available/vim-fugitive"]
+	path = bundle-available/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule "bundle-available/vim-gitgutter"]
+	path = bundle-available/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git
+[submodule "bundle-available/syntastic"]
+	path = bundle-available/syntastic
+	url = https://github.com/scrooloose/syntastic.git
+[submodule "bundle-available/ultisnips"]
+	path = bundle-available/ultisnips
+	url = https://github.com/SirVer/ultisnips.git
+[submodule "bundle-available/vim-snippets"]
+	path = bundle-available/vim-snippets
+	url = https://github.com/honza/vim-snippets.git
+[submodule "bundle-available/python-syntax"]
+	path = bundle-available/python-syntax
+	url = https://github.com/hdima/python-syntax.git
+[submodule "bundle-available/jedi-vim"]
+	path = bundle-available/jedi-vim
+	url = https://github.com/davidhalter/jedi-vim.git
+[submodule "bundle-available/vim-autopep8"]
+	path = bundle-available/vim-autopep8
+	url = https://github.com/tell-k/vim-autopep8.git
+[submodule "bundle-available/vim-python-test-runner"]
+	path = bundle-available/vim-python-test-runner
+	url = https://github.com/JarrodCTaylor/vim-python-test-runner.git
