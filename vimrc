@@ -39,7 +39,7 @@ set hidden
 " When you want to paste large blocks of code into vim, press F2 before you
 " paste. At the bottom you should see ``-- INSERT (paste) --``.
 set pastetoggle=<F2>
-set clipboard=unnamedplus
+"set clipboard=unnamedplus
 
 " Improve performance
 set lazyredraw
@@ -118,13 +118,8 @@ highlight ColorColumn ctermbg=233
 set history=700
 set undolevels=700
 
-
-" Real programmers don't use TABs but spaces
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set shiftround
-set expandtab
+" Show whitespaces
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 
 
 " Make search case insensitive
@@ -248,6 +243,14 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 " Python Setup
 " ============================================================================
 
+" Real programmers don't use TABs but spaces
+autocmd FileType python,c,cpp,java,php set tabstop=4
+autocmd FileType python,c,cpp,java,php set softtabstop=4
+autocmd FileType python,c,cpp,java,php set shiftwidth=4
+autocmd FileType python,c,cpp,java,php set shiftround
+autocmd FileType python,c,cpp,java,php set expandtab
+autocmd FileType python,c,cpp,java,php autocmd BufWritePre <buffer> :%s/\s\+$//e
+
 "
 " Python folding
 "
@@ -283,6 +286,5 @@ set wildignore+=*/coverage/*
 "
 " VIM Python Test Runner
 "
-"set efm+=%-G%.%#lib/python%.%#/site-package%.%#
 set efm+=%A\ \ File\ \"%f\"\\,\ line\ %l\\,\ in\ %m
 
