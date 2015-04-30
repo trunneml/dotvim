@@ -76,3 +76,9 @@
 [submodule "bundle-available/vim-json"]
 	path = bundle-available/vim-json
 	url = https://github.com/elzr/vim-json
+[submodule "bundle-available/tern_for_vim"]
+	path = bundle-available/tern_for_vim
+	url = https://github.com/marijnh/tern_for_vim.git
+[submodule "bundle-available/supertab"]
+	path = bundle-available/supertab
+	url = https://github.com/ervandew/supertab.git
