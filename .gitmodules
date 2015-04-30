@@ -73,3 +73,6 @@
 [submodule "bundle-available/vim-bbye"]
 	path = bundle-available/vim-bbye
 	url = https://github.com/moll/vim-bbye.git
+[submodule "bundle-available/vim-json"]
+	path = bundle-available/vim-json
+	url = https://github.com/elzr/vim-json
