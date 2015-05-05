@@ -192,6 +192,7 @@ map <F3> :TagbarToggle<CR>
 " NerdTree
 "
 map <F6> :NERDTreeToggle<CR>
+let NERDTreeIgnore = ['\.py[co]$', '\.[ao]$', '\.so$', '\.class$']
 "let NERDTreeMapOpenInTab='<ENTER>'
 
 
