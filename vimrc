@@ -168,9 +168,30 @@ let g:buffergator_autoexpand_on_split = 0
 "
 " vim-airline
 "
-let g:airline#extensions#tabline#enabled = 0
+let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 set laststatus=2
+let g:airline_mode_map = {
+      \ '__' : '-',
+      \ 'n'  : 'N',
+      \ 'i'  : 'I',
+      \ 'R'  : 'R',
+      \ 'c'  : 'C',
+      \ 'v'  : 'V',
+      \ 'V'  : 'V',
+      \ '' : 'V',
+      \ 's'  : 'S',
+      \ 'S'  : 'S',
+      \ '' : 'S',
+      \ }
+function! AirlineInit()
+    let g:airline_section_b = airline#section#create(['hunks'])
+    let g:airline_section_x = airline#section#create(['tagbar'])
+    "let g:airline_section_y = airline#section#create(['branch'])
+    let g:airline_section_y = airline#section#create([''])
+endfunction
+autocmd VimEnter * call AirlineInit()
+
 
 "
 " vim-bufferline
