@@ -214,7 +214,6 @@ map <F3> :TagbarToggle<CR>
 "
 map <F6> :NERDTreeToggle<CR>
 let NERDTreeIgnore = ['\.py[co]$', '\.[ao]$', '\.so$', '\.class$']
-"let NERDTreeMapOpenInTab='<ENTER>'
 
 
 "
@@ -289,6 +288,7 @@ let g:jedi#popup_on_dot = 0
 let g:jedi#popup_select_first = 1
 let g:jedi#usages_command = "<leader>u"
 let g:jedi#use_tabs_not_buffers = 0
+let g:jedi#show_call_signatures = "0"
 map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
 "set splitbelow
 
