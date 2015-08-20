@@ -77,9 +77,13 @@ map <c-l> <c-w>l
 map <c-h> <c-w>h
 
 
-" easier moving between tabs
-map <Leader>n <esc>:tabprevious<CR>
-map <Leader>m <esc>:tabnext<CR>
+" easier moving between buffers
+map <Leader>n <esc>:bprevious<CR>
+map <Leader>m <esc>:bnext<CR>
+
+" easier moving between tabss
+map <Leader>N <esc>:tabprevious<CR>
+map <Leader>M <esc>:tabnext<CR>
 
 
 " map sort function to a key
@@ -168,7 +172,7 @@ let g:buffergator_autoexpand_on_split = 0
 "
 " vim-airline
 "
-let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 0
 let g:airline_powerline_fonts = 1
 set laststatus=2
 let g:airline_mode_map = {
@@ -186,17 +190,27 @@ let g:airline_mode_map = {
       \ }
 function! AirlineInit()
     let g:airline_section_b = airline#section#create(['hunks'])
+    let g:airline_section_c = airline#section#create(['%f'])
     let g:airline_section_x = airline#section#create(['tagbar'])
-    "let g:airline_section_y = airline#section#create(['branch'])
-    let g:airline_section_y = airline#section#create([''])
+    let g:airline_section_y = airline#section#create(['branch'])
+    "let g:airline_section_y = airline#section#create([''])
 endfunction
 autocmd VimEnter * call AirlineInit()
 
+let g:airline#extensions#bufferline#overwrite_variables = 0
 
 "
 " vim-bufferline
 "
-let g:bufferline_echo = 0
+let g:bufferline_echo = 1
+
+highlight bufferline_selected gui=bold cterm=bold term=bold
+highlight link bufferline_selected_inactive airline_c_inactive
+let g:bufferline_inactive_highlight = 'airline_c'
+let g:bufferline_active_highlight = 'bufferline_selected'
+let g:bufferline_active_buffer_left = '['
+let g:bufferline_active_buffer_right = ']'
+let g:bufferline_fname_mod = ':~:.'
 
 "
 " ctrlp
