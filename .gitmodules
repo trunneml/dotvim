@@ -94,3 +94,6 @@
 [submodule "bundle-available/vim-tomorrow-theme"]
 	path = bundle-available/vim-tomorrow-theme
 	url = https://github.com/chriskempson/vim-tomorrow-theme.git
+[submodule "bundle-available/PopupBuffer.vim"]
+	path = bundle-available/PopupBuffer.vim
+	url = https://github.com/vim-scripts/PopupBuffer.vim.git
