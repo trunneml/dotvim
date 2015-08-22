@@ -5,9 +5,9 @@ set guioptions+=m  "show menubar
 set guioptions+=r  "show right-hand scroll bar
 set guioptions-=l  "remove left-hand scroll bar
 
-set background=light
-colorscheme lucius
-LuciusWhiteHighContrast
+"set background=light
+"colorscheme lucius
+"LuciusWhiteHighContrast
 
 vmap <c-c> "+y<CR>
 vmap <c-x> "+d<CR>

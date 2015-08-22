@@ -82,3 +82,12 @@
 [submodule "bundle-available/supertab"]
 	path = bundle-available/supertab
 	url = https://github.com/ervandew/supertab.git
+[submodule "bundle-available/rainbow_parentheses.vim"]
+	path = bundle-available/rainbow_parentheses.vim
+	url = https://github.com/kien/rainbow_parentheses.vim.git
+[submodule "bundle-available/vim-sensible"]
+	path = bundle-available/vim-sensible
+	url = https://github.com/tpope/vim-sensible.git
+[submodule "bundle-available/vim-kalisi"]
+	path = bundle-available/vim-kalisi
+	url = https://github.com/freeo/vim-kalisi.git
