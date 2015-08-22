@@ -91,3 +91,6 @@
 [submodule "bundle-available/vim-kalisi"]
 	path = bundle-available/vim-kalisi
 	url = https://github.com/freeo/vim-kalisi.git
+[submodule "bundle-available/vim-tomorrow-theme"]
+	path = bundle-available/vim-tomorrow-theme
+	url = https://github.com/chriskempson/vim-tomorrow-theme.git
