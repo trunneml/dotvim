@@ -139,6 +139,9 @@ set nobackup
 set nowritebackup
 set noswapfile
 
+" Session management
+set ssop-=options    " do not store global and local values in a session
+set ssop-=folds      " do not store folds
 
 "
 " Forgotten sudo
