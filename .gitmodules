@@ -103,3 +103,6 @@
 [submodule "bundle-available/vim-startify"]
 	path = bundle-available/vim-startify
 	url = https://github.com/mhinz/vim-startify.git
+[submodule "bundle-available/vim-ansible-yaml"]
+	path = bundle-available/vim-ansible-yaml
+	url = https://github.com/chase/vim-ansible-yaml.git
