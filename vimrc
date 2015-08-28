@@ -330,3 +330,8 @@ set wildignore+=*/coverage/*
 "
 set efm+=%A\ \ File\ \"%f\"\\,\ line\ %l\\,\ in\ %m
 
+"
+" VIM startify
+"
+let g:startify_change_to_vcs_root = 1
+
