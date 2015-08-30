@@ -230,7 +230,7 @@ map <F3> :TagbarToggle<CR>
 " NerdTree
 "
 map <F6> :NERDTreeToggle<CR>
-let NERDTreeIgnore = ['\.py[co]$', '\.[ao]$', '\.so$', '\.class$']
+let NERDTreeIgnore = ['\.py[co]$', '\.[ao]$', '\.so$', '\.class$', '__pycache__']
 
 
 "
@@ -284,13 +284,14 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 " Python Setup
 " ============================================================================
 
-" Real programmers don't use TABs but spaces
 autocmd FileType python,c,cpp,java,php set tabstop=4
 autocmd FileType python,c,cpp,java,php set softtabstop=4
 autocmd FileType python,c,cpp,java,php set shiftwidth=4
 autocmd FileType python,c,cpp,java,php set shiftround
 autocmd FileType python,c,cpp,java,php set expandtab
 autocmd FileType python,c,cpp,java,php autocmd BufWritePre <buffer> :%s/\s\+$//e
+autocmd FileType python menu <silent> PopUp.-Jedi- :
+autocmd FileType python menu <silent> PopUp.Goto\ &Definition<tab>,d ,d
 
 "
 " Python folding
