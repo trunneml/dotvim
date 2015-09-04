@@ -67,9 +67,6 @@
 [submodule "bundle-available/vim-autopep8"]
 	path = bundle-available/vim-autopep8
 	url = https://github.com/tell-k/vim-autopep8.git
-[submodule "bundle-available/vim-python-test-runner"]
-	path = bundle-available/vim-python-test-runner
-	url = https://github.com/JarrodCTaylor/vim-python-test-runner.git
 [submodule "bundle-available/vim-bbye"]
 	path = bundle-available/vim-bbye
 	url = https://github.com/moll/vim-bbye.git
@@ -106,3 +103,6 @@
 [submodule "bundle-available/vim-ansible-yaml"]
 	path = bundle-available/vim-ansible-yaml
 	url = https://github.com/chase/vim-ansible-yaml.git
+[submodule "bundle-available/vim-test"]
+	path = bundle-available/vim-test
+	url = https://github.com/janko-m/vim-test.git

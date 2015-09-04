@@ -315,6 +315,26 @@ autocmd FileType python menu <silent> PopUp.Goto\ &assignment<tab>,a ,a
 autocmd FileType python menu <silent> PopUp.Find\ &usage<tab>,u ,u
 autocmd FileType python menu <silent> PopUp.&Rename<tab>,r ,r
 
+autocmd FileType python menu <silent> 80 Python.Goto\ &definition<tab>,d ,d
+autocmd FileType python menu <silent> 80 Python.Goto\ &assignment<tab>,a ,a
+autocmd FileType python menu <silent> 80 Python.Find\ &usage<tab>,u ,u
+autocmd FileType python menu <silent> 80 Python.&Rename<tab>,r ,r
+
+nmap <C-t>n :TestNearest<cr>
+menu <silent> 81 Test.Test\ &Nearest<tab>^Tn <C-t>n
+nmap <C-f>f :TestFile<cr>
+menu <silent> 81 Test.Test\ &File<tab>^Tf <C-t>f
+nmap <C-t>s :TestSuite<cr>
+menu <silent> 81 Test.Test\ &Suite<tab>^Ts <C-t>s
+nmap <C-t>l :TestLast<cr>
+menu <silent> 81 Test.Test\ &Last<tab>^Tl <C-t>l
+nmap <C-t>v :TestVisit<cr>
+menu <silent> 81 Test.Test\ &Visit<tab>^Tv <C-t>v
+nmap <C-t>c :cclose<cr>
+menu <silent> 81 Test.&Close\ Quickfix<tab>^Tc <C-t>c
+
+
+
 let python_highlight_all = 1
 
 map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
@@ -334,7 +354,17 @@ set wildignore+=*/coverage/*
 "
 " VIM Python Test Runner
 "
-set efm+=%A\ \ File\ \"%f\"\\,\ line\ %l\\,\ in\ %m
+
+let g:test#python#djangotest#file_pattern = '^test.*\.py$'
+
+function! QuickfixStrategy(cmd)
+  set efm+=%A\ \ File\ \"%f\"\\,\ line\ %l\\,\ in\ %m
+  execute '!'.a:cmd." 2>&1 | tee /tmp/result.txt"
+  silent cfile /tmp/result.txt | cw
+endfunction
+
+let g:test#custom_strategies = {'quickfix': function('QuickfixStrategy')}
+autocmd FileType python let g:test#strategy = 'quickfix'
 
 "
 " VIM startify
