@@ -290,8 +290,6 @@ autocmd FileType python,c,cpp,java,php set shiftwidth=4
 autocmd FileType python,c,cpp,java,php set shiftround
 autocmd FileType python,c,cpp,java,php set expandtab
 autocmd FileType python,c,cpp,java,php autocmd BufWritePre <buffer> :%s/\s\+$//e
-autocmd FileType python menu <silent> PopUp.-Jedi- :
-autocmd FileType python menu <silent> PopUp.Goto\ &Definition<tab>,d ,d
 
 "
 " Python folding
@@ -310,10 +308,17 @@ let g:jedi#popup_select_first = 1
 let g:jedi#usages_command = "<leader>u"
 let g:jedi#use_tabs_not_buffers = 0
 let g:jedi#show_call_signatures = "0"
-map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
-"set splitbelow
+let g:jedi#goto_assignments_command ="<leader>a"
+autocmd FileType python menu <silent> PopUp.-Jedi- :
+autocmd FileType python menu <silent> PopUp.Goto\ &definition<tab>,d ,d
+autocmd FileType python menu <silent> PopUp.Goto\ &assignment<tab>,a ,a
+autocmd FileType python menu <silent> PopUp.Find\ &usage<tab>,u ,u
+autocmd FileType python menu <silent> PopUp.&Rename<tab>,r ,r
 
 let python_highlight_all = 1
+
+map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
+"set splitbelow
 
 "
 " Auto PEP8

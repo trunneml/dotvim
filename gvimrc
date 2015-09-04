@@ -11,6 +11,6 @@ set mousemodel=popup_setpos
 
 vmap <c-c> "+y<CR>
 vmap <c-x> "+d<CR>
-vmap <c-v> "+p<CR>
-nmap <c-v> "+p<CR>
+"vmap <c-v> "+p<CR>
+"nmap <c-v> "+p<CR>
 imap <c-v> <esc>"+p<CR>
