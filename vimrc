@@ -371,3 +371,31 @@ autocmd FileType python let g:test#strategy = 'quickfix'
 "
 let g:startify_change_to_vcs_root = 1
 
+let g:startify_list_order = [
+	\ ['   Local most recently used files:'],
+	\ 'dir',
+	\ ['   Global most recently used files in:'],
+	\ 'files',
+	\ ['   My sessions:'],
+	\ 'sessions',
+	\ ['   My bookmarks:'],
+	\ 'bookmarks',
+	\ ]
+
+let g:startify_session_persistence = 1
+
+let g:startify_custom_header = [
+	\ '     ______         ___ ___ __           ',
+	\ '    |   __ \.--.--.|   |   |__|.--------.',
+	\ '    |    __/|  |  ||   |   |  ||        |',
+	\ '    |___|   |___  | \_____/|__||__|__|__|',
+	\ '            |_____|',
+        \ '',
+        \ '',
+	\ ]
+
+menu <silent> 82 Startify.&Startify<tab>:Startify :Startify<cr>
+menu <silent> 82 Startify.&Load<tab>:SLoad :SLoad<cr>
+menu <silent> 82 Startify.&Save<tab>:SSave :SSave<cr>
+menu <silent> 82 Startify.&Delete\ <tab>:SDelete :SDelete<cr>
+
