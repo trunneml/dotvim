@@ -28,7 +28,6 @@ set nocompatible  " be IMproved
 runtime bundle-enabled/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect('bundle-enabled/{}')
 
-
 " Automatic reloading of .vimrc
 "autocmd! bufwritepost .vimrc source %
 
@@ -236,6 +235,9 @@ let NERDTreeIgnore = ['\.py[co]$', '\.[ao]$', '\.so$', '\.class$', '__pycache__'
 "
 " Gundo
 "
+if has('python3')
+  let g:gundo_prefer_python3 = 1
+endif
 nnoremap <F5> :GundoToggle<CR>
 
 "
@@ -303,7 +305,7 @@ vnoremap <space> zf
 " Settings for jedi-vim
 "
 let g:jedi#usages_command = "<leader>z"
-let g:jedi#popup_on_dot = 0
+let g:jedi#popup_on_dot = 1
 let g:jedi#popup_select_first = 1
 let g:jedi#usages_command = "<leader>u"
 let g:jedi#use_tabs_not_buffers = 0
@@ -322,7 +324,7 @@ autocmd FileType python menu <silent> 80 Python.&Rename<tab>,r ,r
 
 nmap <C-t>n :TestNearest<cr>
 menu <silent> 81 Test.Test\ &Nearest<tab>^Tn <C-t>n
-nmap <C-f>f :TestFile<cr>
+nmap <C-t>f :TestFile<cr>
 menu <silent> 81 Test.Test\ &File<tab>^Tf <C-t>f
 nmap <C-t>s :TestSuite<cr>
 menu <silent> 81 Test.Test\ &Suite<tab>^Ts <C-t>s
@@ -337,7 +339,7 @@ menu <silent> 81 Test.&Close\ Quickfix<tab>^Tc <C-t>c
 
 let python_highlight_all = 1
 
-map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
+map <C-t>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
 "set splitbelow
 
 "
