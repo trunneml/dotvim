@@ -106,3 +106,6 @@
 [submodule "bundle-available/vim-test"]
 	path = bundle-available/vim-test
 	url = https://github.com/janko-m/vim-test.git
+[submodule "bundle-available/vim-pyenv"]
+	path = bundle-available/vim-pyenv
+	url = https://github.com/lambdalisue/vim-pyenv.git
