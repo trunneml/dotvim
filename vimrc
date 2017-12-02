@@ -173,7 +173,7 @@ let g:buffergator_autoexpand_on_split = 0
 " vim-airline
 "
 let g:airline#extensions#tabline#enabled = 0
-let g:airline_powerline_fonts = 1
+"let g:airline_powerline_fonts = 1
 set laststatus=2
 let g:airline_mode_map = {
       \ '__' : '-',
@@ -267,18 +267,6 @@ function! ToggleErrors()
     endif
 endfunction
 nnoremap <silent> <C-e> :<C-u>call ToggleErrors()<CR>
-
-
-"
-" Snippets
-"
-
-let g:UltiSnipsExpandTrigger="<tab>"
-" <c-tab> doesn't work for me :-(
-let g:UltiSnipsListSnippets="<F12>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-
 
 " ============================================================================
 " Python Setup

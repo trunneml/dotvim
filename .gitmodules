@@ -19,9 +19,6 @@
 [submodule "bundle-available/vim-buffergator"]
 	path = pack/trunneml/start/vim-buffergator
 	url = https://github.com/jeetsukumaran/vim-buffergator.git
-[submodule "bundle-available/vim-airline"]
-	path = pack/trunneml/start/vim-airline
-	url = https://github.com/bling/vim-airline.git
 [submodule "bundle-available/vim-bufferline"]
 	path = pack/trunneml/start/vim-bufferline
 	url = https://github.com/bling/vim-bufferline.git
@@ -52,9 +49,6 @@
 [submodule "bundle-available/syntastic"]
 	path = pack/trunneml/start/syntastic
 	url = https://github.com/scrooloose/syntastic.git
-[submodule "bundle-available/ultisnips"]
-	path = pack/trunneml/start/ultisnips
-	url = https://github.com/SirVer/ultisnips.git
 [submodule "bundle-available/vim-snippets"]
 	path = pack/trunneml/start/vim-snippets
 	url = https://github.com/honza/vim-snippets.git
@@ -109,3 +103,6 @@
 [submodule "pack/trunneml/start/jedi-vim"]
 	path = pack/trunneml/start/jedi-vim
 	url = https://github.com/davidhalter/jedi-vim.git
+[submodule "pack/trunneml/start/vim-airline"]
+	path = pack/trunneml/start/vim-airline
+	url = https://github.com/bling/vim-airline.git
