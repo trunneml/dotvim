@@ -106,3 +106,6 @@
 [submodule "bundle-available/vim-pyenv"]
 	path = pack/trunneml/start/vim-pyenv
 	url = https://github.com/lambdalisue/vim-pyenv.git
+[submodule "pack/trunneml/start/jedi-vim"]
+	path = pack/trunneml/start/jedi-vim
+	url = https://github.com/davidhalter/jedi-vim.git
