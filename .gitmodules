@@ -1,111 +1,108 @@
 [submodule "bundle-available/vim-pathogen"]
-	path = bundle-available/vim-pathogen
+	path = pack/trunneml/start/vim-pathogen
 	url = https://github.com/tpope/vim-pathogen.git
 [submodule "bundle-available/numbers.vim"]
-	path = bundle-available/numbers.vim
+	path = pack/trunneml/start/numbers.vim
 	url = https://github.com/myusuf3/numbers.vim.git
 [submodule "bundle-available/vim-wombat256mod"]
-	path = bundle-available/vim-wombat256mod
+	path = pack/trunneml/start/vim-wombat256mod
 	url = https://github.com/michalbachowski/vim-wombat256mod.git
 [submodule "bundle-available/vim-lucius"]
-	path = bundle-available/vim-lucius
+	path = pack/trunneml/start/vim-lucius
 	url = https://github.com/jonathanfilip/vim-lucius
 [submodule "bundle-available/vim-css-color"]
-	path = bundle-available/vim-css-color
+	path = pack/trunneml/start/vim-css-color
 	url = https://github.com/skammer/vim-css-color.git
 [submodule "bundle-available/vim-localrc"]
-	path = bundle-available/vim-localrc
+	path = pack/trunneml/start/vim-localrc
 	url = https://github.com/thinca/vim-localrc.git
 [submodule "bundle-available/vim-buffergator"]
-	path = bundle-available/vim-buffergator
+	path = pack/trunneml/start/vim-buffergator
 	url = https://github.com/jeetsukumaran/vim-buffergator.git
 [submodule "bundle-available/vim-airline"]
-	path = bundle-available/vim-airline
+	path = pack/trunneml/start/vim-airline
 	url = https://github.com/bling/vim-airline.git
 [submodule "bundle-available/vim-bufferline"]
-	path = bundle-available/vim-bufferline
+	path = pack/trunneml/start/vim-bufferline
 	url = https://github.com/bling/vim-bufferline.git
 [submodule "bundle-available/ctrlp.vim"]
-	path = bundle-available/ctrlp.vim
+	path = pack/trunneml/start/ctrlp.vim
 	url = https://github.com/kien/ctrlp.vim.git
 [submodule "bundle-available/tagbar"]
-	path = bundle-available/tagbar
+	path = pack/trunneml/start/tagbar
 	url = https://github.com/majutsushi/tagbar.git
 [submodule "bundle-available/nerdtree"]
-	path = bundle-available/nerdtree
+	path = pack/trunneml/start/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
 [submodule "bundle-available/gundo.vim"]
-	path = bundle-available/gundo.vim
+	path = pack/trunneml/start/gundo.vim
 	url = https://github.com/sjl/gundo.vim.git
 [submodule "bundle-available/vim-autoclose"]
-	path = bundle-available/vim-autoclose
+	path = pack/trunneml/start/vim-autoclose
 	url = https://github.com/Townk/vim-autoclose.git
 [submodule "bundle-available/vim-surround"]
-	path = bundle-available/vim-surround
+	path = pack/trunneml/start/vim-surround
 	url = https://github.com/tpope/vim-surround.git
 [submodule "bundle-available/vim-fugitive"]
-	path = bundle-available/vim-fugitive
+	path = pack/trunneml/start/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
 [submodule "bundle-available/vim-gitgutter"]
-	path = bundle-available/vim-gitgutter
+	path = pack/trunneml/start/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
 [submodule "bundle-available/syntastic"]
-	path = bundle-available/syntastic
+	path = pack/trunneml/start/syntastic
 	url = https://github.com/scrooloose/syntastic.git
 [submodule "bundle-available/ultisnips"]
-	path = bundle-available/ultisnips
+	path = pack/trunneml/start/ultisnips
 	url = https://github.com/SirVer/ultisnips.git
 [submodule "bundle-available/vim-snippets"]
-	path = bundle-available/vim-snippets
+	path = pack/trunneml/start/vim-snippets
 	url = https://github.com/honza/vim-snippets.git
 [submodule "bundle-available/python-syntax"]
-	path = bundle-available/python-syntax
+	path = pack/trunneml/start/python-syntax
 	url = https://github.com/hdima/python-syntax.git
-[submodule "bundle-available/jedi-vim"]
-	path = bundle-available/jedi-vim
-	url = https://github.com/davidhalter/jedi-vim.git
 [submodule "bundle-available/vim-autopep8"]
-	path = bundle-available/vim-autopep8
+	path = pack/trunneml/start/vim-autopep8
 	url = https://github.com/tell-k/vim-autopep8.git
 [submodule "bundle-available/vim-bbye"]
-	path = bundle-available/vim-bbye
+	path = pack/trunneml/start/vim-bbye
 	url = https://github.com/moll/vim-bbye.git
 [submodule "bundle-available/vim-json"]
-	path = bundle-available/vim-json
+	path = pack/trunneml/start/vim-json
 	url = https://github.com/elzr/vim-json
 [submodule "bundle-available/tern_for_vim"]
-	path = bundle-available/tern_for_vim
+	path = pack/trunneml/start/tern_for_vim
 	url = https://github.com/marijnh/tern_for_vim.git
 [submodule "bundle-available/supertab"]
-	path = bundle-available/supertab
+	path = pack/trunneml/start/supertab
 	url = https://github.com/ervandew/supertab.git
 [submodule "bundle-available/rainbow_parentheses.vim"]
-	path = bundle-available/rainbow_parentheses.vim
+	path = pack/trunneml/start/rainbow_parentheses.vim
 	url = https://github.com/kien/rainbow_parentheses.vim.git
 [submodule "bundle-available/vim-sensible"]
-	path = bundle-available/vim-sensible
+	path = pack/trunneml/start/vim-sensible
 	url = https://github.com/tpope/vim-sensible.git
 [submodule "bundle-available/vim-kalisi"]
-	path = bundle-available/vim-kalisi
+	path = pack/trunneml/start/vim-kalisi
 	url = https://github.com/freeo/vim-kalisi.git
 [submodule "bundle-available/vim-tomorrow-theme"]
-	path = bundle-available/vim-tomorrow-theme
+	path = pack/trunneml/start/vim-tomorrow-theme
 	url = https://github.com/chriskempson/vim-tomorrow-theme.git
 [submodule "bundle-available/PopupBuffer.vim"]
-	path = bundle-available/PopupBuffer.vim
+	path = pack/trunneml/start/PopupBuffer.vim
 	url = https://github.com/vim-scripts/PopupBuffer.vim.git
 [submodule "bundle-available/quickfixsigns_vim"]
-	path = bundle-available/quickfixsigns_vim
+	path = pack/trunneml/start/quickfixsigns_vim
 	url = https://github.com/tomtom/quickfixsigns_vim.git
 [submodule "bundle-available/vim-startify"]
-	path = bundle-available/vim-startify
+	path = pack/trunneml/start/vim-startify
 	url = https://github.com/mhinz/vim-startify.git
 [submodule "bundle-available/vim-ansible-yaml"]
-	path = bundle-available/vim-ansible-yaml
+	path = pack/trunneml/start/vim-ansible-yaml
 	url = https://github.com/chase/vim-ansible-yaml.git
 [submodule "bundle-available/vim-test"]
-	path = bundle-available/vim-test
+	path = pack/trunneml/start/vim-test
 	url = https://github.com/janko-m/vim-test.git
 [submodule "bundle-available/vim-pyenv"]
-	path = bundle-available/vim-pyenv
+	path = pack/trunneml/start/vim-pyenv
 	url = https://github.com/lambdalisue/vim-pyenv.git
